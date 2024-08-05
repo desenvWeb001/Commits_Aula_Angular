@@ -1,0 +1,68 @@
+
+<form #f="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <input type="text" class="form-control" name="descricao" id="cadastro.descricao" placeholder="Enter name" [(ngModel)]="cadastro.descricao" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <!--
+    <div class="form-group">
+      <label for="exampleInputPassword1">CURSO</label>
+      <input type="text" class="form-control" id="cadastro.curso" placeholder="Enter curso" [(ngModel)]="cadastro.curso" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">DATA</label>
+        <input  type="date" class="form-control" id="cadastro.data" placeholder="Enter data" [(ngModel)]="cadastro.data" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">MATRICULA</label>
+        <input  type="text" class="form-control" id="cadastro.matricula" placeholder="Enter matricula" [(ngModel)]="cadastro.matricula" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">ASSUNTO</label>
+        <input  type="text" class="form-control" id="cadastro.assunto" placeholder="Enter assunto" [(ngModel)]="cadastro.assunto" [ngModelOptions]="{standalone: true}" required>
+    </div> -->
+
+
+    <button (click) = "onSubmit()" type="submit" class="btn btn-primary" [disabled]="f.form.invalid"> Submit</button>
+  </form>
+
+  <p></p> 
+
+  <!-- Listagem-->
+
+  <!--<div class="container">
+
+    <div class="card-body">-->
+      <div class="card-header">
+        Listagem
+      </div>
+     
+
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Descricao</th>              
+        
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cad of cadastro1">
+              <td>{{cad.id}}</td>
+              <td>{{cad.descricao}}</td>    
+              
+              <td>
+                <button type="button" class="btn btn-warning btn-sm" routerLink="produto/{{cad.id}}" routerLinkActive="selected" >Editar</button>                  
+                <button type="button" class="btn btn-danger btn-sm ml-1">Deletar</button>
+                <!--
+                <button type="button" class="btn btn-warning btn-sm"  routerLink="/agenda-update/{{agenda.id}}" routerLinkActive="active">Editar</button>                  
+                <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteAgenda(agenda)">Deletar</button>
+                -->                  
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-warning btn-sm ml-1" (click)="getCadastro()" type="button">Listar Todos</button> 
+    <!--</div>
+</div>-->

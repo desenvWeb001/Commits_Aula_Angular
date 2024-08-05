@@ -1,0 +1,9 @@
+
+<form #f="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <input type="text" class="form-control" name="descricao" id="cadastro.descricao" placeholder="Enter name" [(ngModel)]="cadastro.descricao" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    
+    <button (click) = "onSubmit()" type="submit" class="btn btn-danger" [disabled]="f.form.invalid"> Submit</button>
+  </form>
